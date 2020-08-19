@@ -1,24 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qV7-YE-h1I">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TjI-Ie-kQm">
+                                <rect key="frame" x="81" y="425" width="252" height="46"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                <state key="normal" title="Game Starts Here">
+                                    <color key="titleColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="CardGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W1E-yL-2yN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TjI-Ie-kQm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R2E-BL-sKq"/>
+                            <constraint firstItem="TjI-Ie-kQm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dPu-rQ-ZLq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Ris-hl-2Ek"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="133.92857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0FB-7s-j8c">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qV7-YE-h1I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I12-mr-v2j">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="176-To-f6U"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDO-uZ-XBA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--Game Card View Controller-->
+        <scene sceneID="UTm-H8-f4y">
+            <objects>
+                <viewController storyboardIdentifier="GameCardViewController" id="6lB-4D-F3h" customClass="GameCardViewController" customModule="GameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PbG-em-cpp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gHp-X4-2rN">
+                                <rect key="frame" x="0.0" y="110" width="414" height="786"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="N0F-Qj-U7U">
+                                    <size key="itemSize" width="100" height="145"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ytv-Kb-hHP">
+                                        <rect key="frame" x="10" y="0.0" width="100" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="OAk-6l-RAl">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="6lB-4D-F3h" id="J9E-8g-1xT"/>
+                                    <outlet property="delegate" destination="6lB-4D-F3h" id="uFr-I6-fwN"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="145-ej-PCQ">
+                                <rect key="frame" x="20" y="54" width="104" height="46"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onReset:" destination="6lB-4D-F3h" eventType="touchUpInside" id="8mj-0b-cjp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xi4-hl-IIz">
+                                <rect key="frame" x="382" y="54" width="0.0" height="36.5"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="145-ej-PCQ" firstAttribute="baseline" secondItem="Xi4-hl-IIz" secondAttribute="baseline" id="337-b5-rMN"/>
+                            <constraint firstItem="Xi4-hl-IIz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="145-ej-PCQ" secondAttribute="trailing" constant="8" symbolic="YES" id="DAv-i8-ii1"/>
+                            <constraint firstItem="145-ej-PCQ" firstAttribute="top" secondItem="eYD-BH-NBF" secondAttribute="top" constant="10" id="EMu-j3-5zN"/>
+                            <constraint firstAttribute="bottom" secondItem="gHp-X4-2rN" secondAttribute="bottom" id="PWa-mW-oE6"/>
+                            <constraint firstAttribute="trailing" secondItem="gHp-X4-2rN" secondAttribute="trailing" id="PhR-ou-xeC"/>
+                            <constraint firstItem="145-ej-PCQ" firstAttribute="leading" secondItem="PbG-em-cpp" secondAttribute="leadingMargin" id="PsL-fe-zXi"/>
+                            <constraint firstItem="gHp-X4-2rN" firstAttribute="leading" secondItem="PbG-em-cpp" secondAttribute="leading" id="RsU-1d-hL1"/>
+                            <constraint firstItem="eYD-BH-NBF" firstAttribute="trailing" secondItem="Xi4-hl-IIz" secondAttribute="trailing" constant="32" id="brz-Ar-SeM"/>
+                            <constraint firstItem="gHp-X4-2rN" firstAttribute="top" secondItem="145-ej-PCQ" secondAttribute="bottom" constant="10" id="giG-vG-8Hv"/>
+                            <constraint firstAttribute="bottom" secondItem="gHp-X4-2rN" secondAttribute="bottom" id="j7P-wS-WpR"/>
+                            <constraint firstItem="145-ej-PCQ" firstAttribute="top" secondItem="Xi4-hl-IIz" secondAttribute="top" id="zBq-JR-L6J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eYD-BH-NBF"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="gHp-X4-2rN" id="6xM-8D-H1f"/>
+                        <outlet property="restartButton" destination="145-ej-PCQ" id="Bse-ke-Gm1"/>
+                        <outlet property="stepsLabel" destination="Xi4-hl-IIz" id="Eu9-wv-jYP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXS-Fl-CG1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="779"/>
         </scene>
     </scenes>
 </document>

@@ -9,12 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.title = "Game"
+        
     }
-
-
+    @IBAction func CardGame(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let cardViewContrroller = storyboard.instantiateViewController(withIdentifier: "GameCardViewController")
+        self.navigationController?.pushViewController(cardViewContrroller, animated: true)
+    }
 }
 
