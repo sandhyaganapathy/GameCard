@@ -10,25 +10,55 @@ import XCTest
 @testable import GameApp
 
 class GameAppTests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let viewModel = GameCardViewModel()
+    func testCreateDeckOfCards() {
+        self.viewModel.createDeckOfCards()
+        let expectedResult = viewModel.currentActiveDeck
+        XCTAssert(!expectedResult.isEmpty)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testRandomArray() {
+        let actualRandomArray = [98, 55, 78, 34, 23, 23, 98, 55, 78, 34, 23, 23]
+        self.viewModel.createDeckOfCards()
+        let expectedArray = viewModel.randomArray
+        XCTAssert(expectedArray.count != 0)
+        XCTAssertEqual(expectedArray.count, actualRandomArray.count)
+        XCTAssertNotEqual(actualRandomArray, expectedArray)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCheckCards() {
+        var cardOne: Card = Card(value: 20)
+        cardOne.cardId = 1
+        cardOne.flipped = false
+        var cardTwo: Card = Card(value: 22)
+        cardTwo.cardId = 2
+        cardTwo.flipped = false
+        let actualArray: [Card] = [cardTwo]
+        self.viewModel.currentActiveChosenCards = [cardTwo]
+        XCTAssertEqual(actualArray, self.viewModel.currentActiveChosenCards)
+        self.viewModel.currentActiveChosenCardsIdx = [IndexPath(row: 1, section: 1)]
+        XCTAssertEqual([IndexPath(row: 1, section: 1)], self.viewModel.currentActiveChosenCardsIdx)
+        self.viewModel.selectCard(card: cardOne, indexPath: IndexPath(row: 0, section: 1))
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testCheckIfMatchTrue() {
+        var cardOne: Card = Card(value: 22)
+        cardOne.cardId = 1
+        cardOne.flipped = false
+        var cardTwo: Card = Card(value: 22)
+        cardTwo.cardId = 2
+        cardTwo.flipped = false
+        self.viewModel.currentActiveChosenCards = [cardOne, cardTwo]
+        let expectedResult = self.viewModel.checkIfMatch()
+        XCTAssert(expectedResult)
     }
-
+    func testCheckIfMatchFalse() {
+        var cardOne: Card = Card(value: 23)
+        cardOne.cardId = 1
+        cardOne.flipped = false
+        var cardTwo: Card = Card(value: 22)
+        cardTwo.cardId = 2
+        cardTwo.flipped = false
+        self.viewModel.currentActiveChosenCards = [cardOne, cardTwo]
+        let expectedResult = self.viewModel.checkIfMatch()
+        XCTAssertFalse(expectedResult)
+        
+    }
 }

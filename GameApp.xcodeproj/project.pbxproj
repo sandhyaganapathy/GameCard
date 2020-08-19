@@ -15,6 +15,12 @@
 		7B10329D24EBCD9300808FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B10329B24EBCD9300808FFB /* LaunchScreen.storyboard */; };
 		7B1032A824EBCD9400808FFB /* GameAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032A724EBCD9400808FFB /* GameAppTests.swift */; };
 		7B1032B324EBCD9400808FFB /* GameAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032B224EBCD9400808FFB /* GameAppUITests.swift */; };
+		7B1032C224EBD1FE00808FFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032C124EBD1FE00808FFB /* Constants.swift */; };
+		7B1032C524EBD21300808FFB /* GameCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032C424EBD21300808FFB /* GameCardViewController.swift */; };
+		7B1032C924EBD22D00808FFB /* GameCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032C724EBD22D00808FFB /* GameCardCollectionViewCell.swift */; };
+		7B1032CA24EBD22D00808FFB /* GameCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B1032C824EBD22D00808FFB /* GameCardCollectionViewCell.xib */; };
+		7B1032CD24EBD24400808FFB /* GameCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032CC24EBD24400808FFB /* GameCardViewModel.swift */; };
+		7B1032D024EBD27200808FFB /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1032CF24EBD27200808FFB /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		7B1032AE24EBCD9400808FFB /* GameAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1032B224EBCD9400808FFB /* GameAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAppUITests.swift; sourceTree = "<group>"; };
 		7B1032B424EBCD9400808FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B1032C124EBD1FE00808FFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7B1032C424EBD21300808FFB /* GameCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardViewController.swift; sourceTree = "<group>"; };
+		7B1032C724EBD22D00808FFB /* GameCardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		7B1032C824EBD22D00808FFB /* GameCardCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		7B1032CC24EBD24400808FFB /* GameCardViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCardViewModel.swift; sourceTree = "<group>"; };
+		7B1032CF24EBD27200808FFB /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,11 @@
 		7B10328F24EBCD9200808FFB /* GameApp */ = {
 			isa = PBXGroup;
 			children = (
+				7B1032CE24EBD24700808FFB /* Model */,
+				7B1032CB24EBD23000808FFB /* ViewModel */,
+				7B1032C624EBD22100808FFB /* View */,
+				7B1032C324EBD20400808FFB /* ViewController */,
+				7B1032C024EBD1ED00808FFB /* Utils */,
 				7B10329024EBCD9200808FFB /* AppDelegate.swift */,
 				7B10329224EBCD9200808FFB /* SceneDelegate.swift */,
 				7B10329424EBCD9200808FFB /* ViewController.swift */,
@@ -126,6 +143,47 @@
 				7B1032B424EBCD9400808FFB /* Info.plist */,
 			);
 			path = GameAppUITests;
+			sourceTree = "<group>";
+		};
+		7B1032C024EBD1ED00808FFB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7B1032C124EBD1FE00808FFB /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7B1032C324EBD20400808FFB /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7B1032C424EBD21300808FFB /* GameCardViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7B1032C624EBD22100808FFB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B1032C724EBD22D00808FFB /* GameCardCollectionViewCell.swift */,
+				7B1032C824EBD22D00808FFB /* GameCardCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B1032CB24EBD23000808FFB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7B1032CC24EBD24400808FFB /* GameCardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7B1032CE24EBD24700808FFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B1032CF24EBD27200808FFB /* Card.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +292,7 @@
 			files = (
 				7B10329D24EBCD9300808FFB /* LaunchScreen.storyboard in Resources */,
 				7B10329A24EBCD9300808FFB /* Assets.xcassets in Resources */,
+				7B1032CA24EBD22D00808FFB /* GameCardCollectionViewCell.xib in Resources */,
 				7B10329824EBCD9200808FFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,9 +318,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1032C924EBD22D00808FFB /* GameCardCollectionViewCell.swift in Sources */,
+				7B1032CD24EBD24400808FFB /* GameCardViewModel.swift in Sources */,
 				7B10329524EBCD9200808FFB /* ViewController.swift in Sources */,
 				7B10329124EBCD9200808FFB /* AppDelegate.swift in Sources */,
 				7B10329324EBCD9200808FFB /* SceneDelegate.swift in Sources */,
+				7B1032C224EBD1FE00808FFB /* Constants.swift in Sources */,
+				7B1032C524EBD21300808FFB /* GameCardViewController.swift in Sources */,
+				7B1032D024EBD27200808FFB /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
